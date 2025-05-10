@@ -1,0 +1,58 @@
+@startuml
+
+class Paciente{
+    -nombre : String
+    -edad : int
+    -numSocio : int
+
+    +irAConsulta() : Void
+
+}
+class Medico{
+    -nombre: String
+    -edad : int
+    -numSerie : int
+    -especialidad : String
+    -sala : int
+
+    +marcarEntrada() : void
+    +atendenderPaciente() : void
+}
+class Medico extends Cirujano{
+    +operar() : void
+
+}
+
+class Medico extends Clinico{
+    +darReceta() : void
+
+
+
+}
+
+class Turno{
+    -horarioTurno : String
+
+}
+
+class Area{
+    -areaDefinida : String
+
+    +cambiarArea() : void
+}
+
+class Historial{
+    -detalleConsulta : String
+    -historiaClínica : String
+
+
+
+}
+
+Paciente "1"--"1" Historial : tiene
+Turno "*" -- "1" Medico : tiene
+Medico "1" -- "1" Area : pertenece
+Area "1" -- "1" Clinico : pertenece
+Area "1" -- "1" Cirujano : pertenece
+Paciente "1" -- "*" Turno : tiene
+@enduml

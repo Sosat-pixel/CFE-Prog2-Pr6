@@ -1,0 +1,18 @@
+@startuml
+
+class Contacto {
+    - nombre : String
+    - telefono : int
+    - familia : String
+
+    +agregarContactos() : void
+    +eliminarContactos() : void
+    +buscarContactos() : void
+}
+
+class Etiqueta {
+    - etiquetas : String
+}
+
+Contacto "*" -- "*" Etiqueta : tiene
+@enduml
