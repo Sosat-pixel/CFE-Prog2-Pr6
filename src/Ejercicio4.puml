@@ -50,5 +50,7 @@ Usuario "1" -- "*" Publicacion : crea
 Usuario "1" -- "*" Comentario : realiza
 Usuario "*" -- "*" Grupo : tiene
 Publicacion "*" -- "*" Comentario : tiene
+Usuario "*" -- "*" Usuario : sigue
+
 
 @enduml
